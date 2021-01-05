@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	//println(isMatch("aaa", "ab*a*c*a"))
-	println(isMatch("aaa", "a*"))
+	println(isMatch("b", "a*b"))
 }
 
 //func isMatch(s string, p string) bool {
