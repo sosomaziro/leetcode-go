@@ -3,12 +3,23 @@ package main
 func main() {
 	//println(isMatch("aaa", "ab*a*c*a"))
 	println(maxAreaLow([]int{1, 2, 3, 4, 7, 8, 9, 10}))
-	//println(maxArea([]int{1, 2, 3, 4, 7, 8, 9, 10}))
+	println(maxArea([]int{1, 2, 3, 4, 7, 8, 9, 10}))
 }
 
-//func maxArea(height []int) int {
-//
-//}
+func maxArea(height []int) int {
+	l := 0
+	r := len(height) - 1
+	ans := 0
+	for l < r {
+		ans = getMax(getMin(height[l], height[r]) * (r - l), ans)
+		if height[l] > height[r] {
+			r--
+		} else {
+			l++
+		}
+	}
+	return ans
+}
 
 func maxAreaLow(height []int) int {
 	area:=0
